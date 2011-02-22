@@ -88,7 +88,6 @@
 #define KEY_FOCUS       0x125
 #define KEY_CAMERA      0x126
 #define KEY_SEARCH      0x127
-#define KEY_SEND        0x128
 
 
 void keys_init(void);

@@ -107,7 +107,7 @@ void target_init(void)
 		if ((len == 0) && (i == num_parts - 1))
 			len = flash_info->num_blocks - offset - ptn->start;
 		ptable_add(&flash_ptable, ptn->name, offset + ptn->start,
-			   len, ptn->flags);
+			   len, ptn->flags,ptn->type,ptn->perm);
 	}
 
 	ptable_dump(&flash_ptable);
