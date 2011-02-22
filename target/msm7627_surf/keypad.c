@@ -50,6 +50,7 @@ static unsigned int halibut_col_gpios[] = { 36, 37, 38, 39, 40 };
 #define KEYMAP_INDEX(row, col) ((row)*ARRAY_SIZE(halibut_col_gpios) + (col))
 
 static const unsigned short halibut_keymap[ARRAY_SIZE(halibut_col_gpios) * ARRAY_SIZE(halibut_row_gpios)] = {
+#if 0 /*On LGE GT540  Swift -keys */ 
 	[KEYMAP_INDEX(0, 0)] = KEY_5,
 	[KEYMAP_INDEX(0, 1)] = KEY_9,
 	[KEYMAP_INDEX(0, 2)] = KEY_SOFT1,
@@ -93,6 +94,15 @@ static const unsigned short halibut_keymap[ARRAY_SIZE(halibut_col_gpios) * ARRAY
 	[KEYMAP_INDEX(6, 3)] = KEY_F2,
 	[KEYMAP_INDEX(6, 4)] = KEY_F1
 #endif
+#else
+	[KEYMAP_INDEX(0, 0)] = 115,//KEY_VOLUMEUP,
+	[KEYMAP_INDEX(0, 1)] = 114,//KEY_VOLUMEDOWN,
+	[KEYMAP_INDEX(1, 0)] = 242,//KEY_FOCUS,
+	[KEYMAP_INDEX(1, 1)] = 212,//KEY_CAMERA,
+	[KEYMAP_INDEX(1, 2)] = 217,//KEY_SEARCH,
+	[KEYMAP_INDEX(2, 0)] = 231,//KEY_SEND,
+	[KEYMAP_INDEX(2, 1)] = 102,//KEY_HOME,
+#endif 
 };
 
 static struct gpio_keypad_info halibut_keypad_info = {
