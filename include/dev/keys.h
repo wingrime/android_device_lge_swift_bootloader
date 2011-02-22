@@ -84,6 +84,13 @@
 
 #define MAX_KEYS	0x1ff
 
+/*Swift LGE GT540 Specific Keys*/
+#define KEY_FOCUS       0x125
+#define KEY_CAMERA      0x126
+#define KEY_SEARCH      0x127
+#define KEY_SEND        0x128
+
+
 void keys_init(void);
 void keys_post_event(uint16_t code, int16_t value);
 int keys_get_state(uint16_t code);

@@ -47,7 +47,7 @@
 #include "bootimg.h"
 #include "fastboot.h"
 
-#define DEFAULT_CMDLINE "mem=100M console=null";
+#define DEFAULT_CMDLINE "mem=214M console=null";
 
 #ifdef MEMBASE
 #define EMMC_BOOT_IMG_HEADER_ADDR (0xFF000+(MEMBASE))
@@ -444,9 +444,7 @@ void aboot_init(const struct app_descriptor *app)
 	page_mask = page_size - 1;
 	if (keys_get_state(KEY_HOME) != 0)
 	        boot_into_recovery = 1;
-	if (keys_get_state(KEY_BACK) != 0)
-		goto fastboot;
-	if (keys_get_state(KEY_CLEAR) != 0)
+	if (keys_get_state(KEY_CAMERA) != 0)
 		goto fastboot;
 
 	reboot_mode = check_reboot_mode();
